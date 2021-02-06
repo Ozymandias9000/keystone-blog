@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: keystone-mongo
+    build: ./mongo-db
+    restart: on-failure
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
